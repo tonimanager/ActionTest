@@ -1,0 +1,29 @@
+name: SFTEST
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-2019
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+          
+      - name: TestExitCode0
+        run: |
+          java -jar GithubActionsHelperMain.jar TestExitCode 0
+          
+      - name: TestExitCode1
+        run: |
+          java -jar GithubActionsHelperMain.jar TestExitCode 1
+          
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+      - name: TestExitCode0
+        run: |
+          java -jar GithubActionsHelperMain.jar TestExitCode 0
