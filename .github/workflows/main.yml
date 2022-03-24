@@ -22,6 +22,7 @@ jobs:
           java -jar GithubActionsHelperMain.jar TestExitCode 1
           
       - name: Run a one-line script
+        if: always()
         run: echo Hello, world!
         
       - name: TestExitCode0
